@@ -482,9 +482,9 @@
 </div>
 
 <script>
-    // 1. TENTUKAN KONFIGURASI UTAMA ANDA DI SINI
-    const URL_APPS_SCRIPT = "GANTI_DENGAN_URL_WEB_APP_APPS_SCRIPT_ANDA"; // Masukkan URL Web App Apps Script Anda di sini
-    const NOMOR_WHATSAPP = "6285691916786"; 
+    // 1. KONFIGURASI UTAMA DI SINI
+    const URL_APPS_SCRIPT = "https://script.google.com/macros/s/AKfycbwlYzQaHgBFYNQMK-9gQLSTGUXvAOhPHxGYfJrlmszDDGJ7_DwXl4le9UfdzjIbrc2Qlw/exec"; // Masukkan URL Web App Apps Script di sini
+    const NOMOR_WHATSAPP = "6285691916786"; // Nomor WA
 
     function submitForm(event) {
         event.preventDefault();
@@ -512,7 +512,7 @@
         const venue = document.querySelector('input[name="venue"]:checked')?.value || '';
         const roomType = document.querySelector('input[name="roomType"]:checked')?.value || '';
 
-        // Fungsi pembantu menyusun pesan teks WhatsApp agar rapi
+        // Fungsi Pesan teks WhatsApp agar rapi
         function buatPesanWA() {
             return `*RESERVASI BARU (BARAPI RCD)*%0A%0A` +
                    `*Nama:* ${encodeURIComponent(name)}%0A` +
@@ -525,7 +525,7 @@
                    `*Request Tambahan:*%0A${encodeURIComponent(additional)}`;
         }
 
-        // 4. Siapkan Data untuk dikirim ke Google Spreadsheet
+        //Data untuk dikirim ke Google Spreadsheet
         const formData = new URLSearchParams();
         formData.append("name", name);
         formData.append("phone", phone);
